@@ -17,10 +17,8 @@ pipeline {
 	 
 	 stage("Buiding Docker Image") {
 	   steps {
-	     
-		 dir("jenkins-learning-pipeline") {
 		 sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
-		 }
+		 
 	   }
 	 }
      
