@@ -5,23 +5,8 @@ pipeline {
   environment {
     IMAGE_NAME = "devad14/jenkins-learning-pipeline"
     IMAGE_TAG  = "v.${BUILD_NUMBER}"
-    Repo_URL   = "https://github.com/Aditya-1405/jenkins-learning-pipeline.git"
   }
 
-  stages {
-     
-	 stage("Cleaning Up") {
-	   steps {
-	     deleteDir()
-	   }
-	 }
-	 stage("Cloning Repository") {
-	   steps {
-	     sh "git clone ${Repo_URL}"
-         sh "ls -l"
-	   }
-	 }
-	 
 	 stage("Buiding Docker Image") {
 	   steps {
 		 sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
