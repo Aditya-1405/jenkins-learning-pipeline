@@ -4,7 +4,7 @@ pipeline {
 
   environment {
     IMAGE_NAME = "devad14/jenkins-learning-pipeline"
-    IMAGE_TAG  = "${BUILD_NUMBER}"
+    IMAGE_TAG  = "v.${BUILD_NUMBER}"
     Repo_URL   = "https://github.com/Aditya-1405/jenkins-learning-pipeline.git"
   }
 
