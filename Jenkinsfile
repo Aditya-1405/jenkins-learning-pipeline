@@ -4,7 +4,7 @@ pipeline {
 
   environment {
     IMAGE_NAME = "devad14/jenkins-learning-pipeline"
-    IMAGE_TAG  = "v11.${BUILD_NUMBER}"
+    IMAGE_TAG  = "v1.1.${BUILD_NUMBER}"
   }
 
   stages {
