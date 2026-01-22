@@ -7,6 +7,8 @@ pipeline {
     IMAGE_TAG  = "v.${BUILD_NUMBER}"
   }
 
+  stages {
+	 
 	 stage("Buiding Docker Image") {
 	   steps {
 		 sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
