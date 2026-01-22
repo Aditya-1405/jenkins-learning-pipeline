@@ -3,9 +3,9 @@ pipeline {
   agent any
 
   environment {
-    IMAGE_NAME = "devad14/kube-env-image"
+    IMAGE_NAME = "devad14/jenkins-learning-pipeline"
     IMAGE_TAG  = "${BUILD_NUMBER}"
-    Repo_URL   = "https://github.com/Aditya-1405/kube-env.git"
+    Repo_URL   = "https://github.com/Aditya-1405/jenkins-learning-pipeline.git"
   }
 
   stages {
@@ -25,7 +25,7 @@ pipeline {
 	 stage("Buiding Docker Image") {
 	   steps {
 	     
-		 dir("kube-env") {
+		 dir("jenkins-learning-pipeline") {
 		 sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
 		 }
 	   }
