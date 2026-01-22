@@ -6,15 +6,6 @@ pipeline {
     IMAGE_NAME = "devad14/jenkins-learning-pipeline"
     IMAGE_TAG  = "v.${BUILD_NUMBER}"
   }
-
-  stages {
-     
-	 stage("Cleaning Up") {
-	   steps {
-	     deleteDir()
-	   }
-	 }
-	 
 	 stage("Buiding Docker Image") {
 	   steps {
 		 sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
