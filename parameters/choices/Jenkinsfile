@@ -1,0 +1,24 @@
+pipeline {
+
+	agent any 
+	
+	parameters{
+	  choice(
+        choices: ["TEST", "QA", "UAT", "PROD"], 
+        description: "Which environment to deploy this service?", 
+        name: "deployEnv"
+        )
+	  
+	}
+
+	stages {
+	  stage ("choice parameter check") {
+	  
+	    steps {
+		  
+		  echo " This service will get deployed in ${params.deployEnv} environment." 
+		  
+		}
+	  }
+	}
+}

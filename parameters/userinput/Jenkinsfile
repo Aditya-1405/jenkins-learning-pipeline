@@ -1,0 +1,25 @@
+pipeline {
+
+	agent any 
+	
+	parameters{
+	
+	  string(
+        defaultValue: "Test", 
+        description: "Which environment to deploy this service?", 
+        name: "deployEnv"
+        )
+	  
+	}
+    
+	stages {
+	  stage ("string parameter check") {
+	  
+	    steps {
+		  
+		  echo " This service will get deployed in ${params.deployEnv} environment" 
+		  
+		}
+	  }
+	}
+}
