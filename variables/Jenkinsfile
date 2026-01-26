@@ -1,0 +1,23 @@
+pipeline {
+  
+  agent any
+
+  environment {
+    
+    def myString = "Hello Aditya"
+    def myNumber = 12345
+    def myBool = true
+  }
+
+  stages{
+   stage("Recalling the defined env variables") {
+     
+     steps {
+
+        echo "the string is ${myString}"
+        echo "the string is ${myNumber}"
+        echo "the string is ${myBool}"
+     }
+   }
+  }
+}
